@@ -43,24 +43,25 @@ function Login(props) {
 
     return (
         <div className='main-container'>
-            <div style={{margin: '5rem'}}>
+            <div style={{marginTop: '5rem'}}>
                 <p style={{display: 'inline', margin: '3rem'}}>User name</p>
                 <input
                     onChange={(e) => handleUserNameChange(e)}
                 />
-                <p style={{color: 'red', alignSelf: 'center'}}>
-                    {userNameErrMsg}
-                </p>
             </div>
-            <div>
+            <p style={{color: 'red'}}>
+                {userNameErrMsg}
+            </p>
+            <br/>
+            <div style={{marginTop: '5rem'}}>
                 <p style={{display: 'inline', margin: '3rem'}}>Password</p>
                 <input type={'password'}
                     onChange={(e) => handlePasswordChange(e)}
                 />
-                <p style={{color: 'red'}}>
-                    {passwordErrMsg}
-                </p>
             </div>
+            <p style={{color: 'red', width: '20%'}}>
+                {passwordErrMsg}
+            </p>
             <button 
                 className='button'
                 disabled={passwordErrMsg || userNameErrMsg ? 'button disabled' : ''}
